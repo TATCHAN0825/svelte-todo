@@ -25,7 +25,9 @@
             </div>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4 m-3">
                 {#each data.tasks[id] as task}
-                    <div class="shadow-sm hover:shadow-2xl rounded-lg bg-green-300 hover:bg-green-400"
+                    <div class="shadow-sm hover:shadow-2xl rounded-lg"
+                         class:hover:bg-green-400={task.completed_at === null}
+                         class:bg-green-300={task.completed_at === null}
                          class:hover:bg-blue-400={task.completed_at !== null}
                          class:bg-blue-300={task.completed_at !== null}>
                         <div class="m-2">{task.title}</div>
